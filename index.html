@@ -25,6 +25,14 @@
             </li>
         </ol>
     </div>
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+    <div id="app-6">
+        <p>{{ message }}</p>
+        <input v-model="message">
+    </div>
 </body>
 <script src="vue.js"></script>
 <script>
@@ -63,6 +71,24 @@
                     text: 'Build Something awesome'
                 }
             ]
+        }
+    });
+    var app5 = new Vue({
+        el:"#app-5",
+        data:{
+            message: "Welcome to Pharping Dakshinkali"
+        },
+        methods:{
+            reverseMessage: function(){
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    });
+
+    var app6 = new Vue({
+        el: "#app-6",
+        data: {
+            message:'Hello Vue'
         }
     })
 </script>
